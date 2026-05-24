@@ -1,9 +1,8 @@
+import Viral from "./viral";
 
 function App() {
   return (
-    <div className="App">
-      <h1>React</h1>
-    </div>
+    <Viral />
   );
 }
 

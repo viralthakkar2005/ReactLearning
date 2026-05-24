@@ -1,9 +1,9 @@
-import viral from "./viral"
+import Viral from "./viral"
 
 function App() {
 
   return (
-   <viral />
+   <Viral />
   )
 }
 
