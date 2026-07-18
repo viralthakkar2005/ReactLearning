@@ -12,7 +12,7 @@ export class AuthService{
     this.client
         .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteProjectId);
-    this.account=new Account(this.Client);
+    this.account=new Account(this.client);
   }
 
   async createAccount({email,password,name}){
@@ -42,7 +42,7 @@ export class AuthService{
 
   async getCurrentUser(){
     try {
-      await this.account.get();     
+      return await this.account.get();     
     } catch (error) {
       throw error
     }
@@ -52,7 +52,7 @@ export class AuthService{
 
   async logout(){
     try {
-      await this.account.deleterSessions();
+      await this.account.deleteSessions();
     } catch (error) {
       throw error;
     }
@@ -64,4 +64,4 @@ export class AuthService{
 
 const authService=new AuthService();    // this is object so we use all calass method using like authService.createAccount(pass the value)
 
-export default authService
+export default authService;
